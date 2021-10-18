@@ -27,4 +27,6 @@ docker-compose run app sh -c "python manage.py startapp core"
 docker-compose run --rm app sh -c "python manage.py startapp user"
 docker-compose run --rm app sh -c "python manage.py startapp recipe"
 docker-compose run --rm app sh -c "python manage.py makemigrations"
+
+docker-compose run --rm app sh -c "python manage.py makemigrations core"
 ```
