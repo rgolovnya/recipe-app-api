@@ -21,7 +21,6 @@ class ModelTests(TestCase):
             email=email,
             password=password
         )
-
         self.assertEqual(user.email, email)
         self.assertTrue(user.check_password(password))
 
@@ -29,7 +28,6 @@ class ModelTests(TestCase):
         """test the email for a new user is normalized"""
         email = 'email@GOOGLE.COM'
         user = get_user_model().objects.create_user(email, 'pass123456')
-
         self.assertEqual(user.email, email.lower())
 
     def test_new_user_invalid_email(self):
@@ -52,7 +50,6 @@ class ModelTests(TestCase):
             user=sample_user(),
             name='Vegan'
         )
-
         self.assertEqual(str(tag), tag.name)
 
     def test_ingredient_str(self):
@@ -61,7 +58,6 @@ class ModelTests(TestCase):
             user=sample_user(),
             name='Cucumber'
         )
-
         self.assertEqual(str(ingredient), ingredient.name)
 
     def test_recipe_str(self):
@@ -72,7 +68,6 @@ class ModelTests(TestCase):
             time_minutes=5,
             price=5.00
         )
-
         self.assertEqual(str(recipe), recipe.title)
 
     @patch('uuid.uuid4')
